@@ -53,13 +53,13 @@ export default function Services() {
 
             <header className="home-header">
                 <nav className="header-nav  bg-[#A0F1BD] w-full flex justify-between items-center px-[40px] py-[32px]" aria-label='Top services navigation'>
-                    <p
+                    <Link
                         aria-current="page"
                         className="nav-company text-[#2E4F21] font-semibold text-[27px]"
-                        // to="/"
+                        to="/"
                     >
                         Noble Finances
-                    </p>
+                    </Link>
                     <div className="nav-div">
                         <Link
                             className="div-services mr-[20px] text-[#2E4F21]"

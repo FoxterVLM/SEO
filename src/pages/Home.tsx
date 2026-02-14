@@ -24,7 +24,7 @@ export default function Home() {
                 name="robots"
                 content="index, follow"
             />
-            <link rel="canonnical" href="https://example.com/en"/>
+            <link rel="canonnical" href="https://seoapp1.netlify.app/"/>
             {/* do generatio!n! TODO */}
             <meta
                 property='og:type'
@@ -44,12 +44,12 @@ export default function Home() {
             />
             <meta
                 property='og:image'
-                content='https://example.com/img/Earth.svg'
+                content='https://seoapp1.netlify.app/img/Earth.svg'
             />
 
             <meta
                 property='og:url'
-                content='https://example.com'
+                content='https://seoapp1.netlify.app'
             />
         </Helmet>
 
