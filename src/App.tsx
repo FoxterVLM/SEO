@@ -5,12 +5,13 @@ import Booking from "./pages/Booking.tsx";
 import Services from "./pages/Services.tsx";
 
 function App() {
+
   return (
     <Router>
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-        <Route path="/booking" element={<Booking />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/services' element={<Services />} />
+          <Route path="/booking" element={<Booking />} />
       </Routes>
     </Router>
   );

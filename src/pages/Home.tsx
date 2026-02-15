@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Earth from "../../public/img/index/Earth.svg";
 import One from "../../public/img/index/1.svg";
 import Two from "../../public/img/index/2.svg";
@@ -7,9 +7,17 @@ import Three from "../../public/img/index/3.svg";
 import Person from "../../public/img/index/Person.svg";
 import Img from "../../public/img/index/Img.svg";
 import Wood from "../../public/img/index/Wood.svg";
+import {useCanonicalStore} from "../store/canonicalStore.ts";
+import {useEffect} from "react";
 
 
 export default function Home() {
+
+    const {servicesPATH, setServices} = useCanonicalStore();
+    useEffect(() => {
+        setServices();
+    }, [])
+
   return (
     <div className="home-wrapper">
         <Helmet>
@@ -24,8 +32,7 @@ export default function Home() {
                 name="robots"
                 content="index, follow"
             />
-            <link rel="canonical" href="https://seoapp1.netlify.app"/>
-            {/* do generatio!n! TODO */}
+            <link rel="canonical" href='' />
             <meta
                 property='og:type'
                 content='website'
@@ -49,7 +56,7 @@ export default function Home() {
 
             <meta
                 property='og:url'
-                content='https://seoapp1.netlify.app'
+                content=''
             />
         </Helmet>
 
@@ -66,7 +73,7 @@ export default function Home() {
                 <div className="nav-div">
                     <Link
                         className="div-services mr-[20px] text-[#2E4F21]"
-                        to="/services"
+                        to={servicesPATH}
                     >
                         Services
                     </Link>

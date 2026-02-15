@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Money from "../../public/img/index/services/Money.webp";
 import City from "../../public/img/index/services/City.webp";
 import Penc from "../../public/img/index/services/Penc.webp";
@@ -7,7 +7,11 @@ import Kup from "../../public/img/index/services/Kup.webp";
 import Kube from "../../public/img/index/services/Kube.webp";
 import Taxes from "../../public/img/index/services/Taxes.webp";
 
+
+
 export default function Services() {
+
+
     return (
         <div className='services-wrapper'>
             <Helmet>
