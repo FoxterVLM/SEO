@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# 1. Обробка помилок
+ErrorDocument 404 /404.html
+
+# 2. Редирект з HTTP на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Редирект з WWW на без-WWW (наприклад, з www.site.com на site.com)
+# Це корисно для цілісності посилальної маси
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 4. Статичні редиректи (301)
+Redirect 301 /old-page.html /about.html
+Redirect 301 /old-contacts.html /contacts.html
+
+# 5. Захист файлу .htaccess від перегляду ззовні
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# 6. Вимкнення перегляду вмісту папок (якщо немає index-файлу)
+Options -Indexes
