@@ -3,6 +3,7 @@ import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import Booking from "./pages/Booking.tsx";
 import Services from "./pages/Services.tsx";
+import Page404 from "./pages/Page404.tsx";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/services' element={<Services />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path='*' element={<Page404 />}></Route>
       </Routes>
     </Router>
   );

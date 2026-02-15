@@ -1,25 +1,39 @@
-RewriteEngine On
-
-# 1. Обробка помилок
-ErrorDocument 404 /404.html
-
-# 2. Редирект з HTTP на HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# 3. Редирект з WWW на без-WWW (наприклад, з www.site.com на site.com)
-# Це корисно для цілісності посилальної маси
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-
-# 4. Статичні редиректи (301)
-Redirect 301 /old-page.html /about.html
-Redirect 301 /old-contacts.html /contacts.html
-
-# 5. Захист файлу .htaccess від перегляду ззовні
-<Files ".htaccess">
-    Require all denied
-</Files>
-
-# 6. Вимкнення перегляду вмісту папок (якщо немає index-файлу)
-Options -Indexes
+## Вимикаємо MultiViews (щоб уникати конфліктів з URL)
+#<IfModule mod_negotiation.c>
+#  Options -MultiViews
+#</IfModule>
+#
+## Увімкнення rewrite (mod_rewrite)
+#<IfModule mod_rewrite.c>
+#  RewriteEngine On
+#  RewriteBase /
+#
+#  # Якщо файл чи директорія існує — повертаємо їх
+#  RewriteCond %{REQUEST_FILENAME} -f [OR]
+#  RewriteCond %{REQUEST_FILENAME} -d
+#  RewriteRule ^ - [L]
+#
+#  # Інакше всі запити перенаправляємо на index.html
+#  RewriteRule ^ index.html [QSA,L]
+#</IfModule>
+#
+## Кешування статичних файлів (зображення, css, js, шрифти)
+#<IfModule mod_expires.c>
+#  ExpiresActive On
+#  ExpiresByType text/css "access plus 1 month"
+#  ExpiresByType application/javascript "access plus 1 month"
+#  ExpiresByType image/jpeg "access plus 1 year"
+#  ExpiresByType image/png "access plus 1 year"
+#  ExpiresByType image/svg+xml "access plus 1 year"
+#  ExpiresByType font/woff2 "access plus 1 year"
+#</IfModule>
+#
+## Стиснення відповіді (gzip)
+#<IfModule mod_deflate.c>
+#  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+#</IfModule>
+#
+## Захист самого .htaccess
+#<Files ".htaccess">
+#  Require all denied
+#</Files>
