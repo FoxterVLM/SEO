@@ -3,19 +3,19 @@
 #  Options -MultiViews
 #</IfModule>
 #
-## Увімкнення rewrite (mod_rewrite)
-#<IfModule mod_rewrite.c>
-#  RewriteEngine On
-#  RewriteBase /
-#
-#  # Якщо файл чи директорія існує — повертаємо їх
-#  RewriteCond %{REQUEST_FILENAME} -f [OR]
-#  RewriteCond %{REQUEST_FILENAME} -d
-#  RewriteRule ^ - [L]
-#
-#  # Інакше всі запити перенаправляємо на index.html
-#  RewriteRule ^ index.html [QSA,L]
-#</IfModule>
+# Увімкнення rewrite (mod_rewrite)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Якщо файл чи директорія існує — повертаємо їх
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Інакше всі запити перенаправляємо на index.html
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
 #
 ## Кешування статичних файлів (зображення, css, js, шрифти)
 #<IfModule mod_expires.c>
