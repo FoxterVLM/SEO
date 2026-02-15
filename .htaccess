@@ -1,7 +1,7 @@
-## Вимикаємо MultiViews (щоб уникати конфліктів з URL)
-#<IfModule mod_negotiation.c>
-#  Options -MultiViews
-#</IfModule>
+# Вимикаємо MultiViews (щоб уникати конфліктів з URL)
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
 #
 # Увімкнення rewrite (mod_rewrite)
 <IfModule mod_rewrite.c>
