@@ -51,7 +51,7 @@ export default function Home() {
             />
             <meta
                 property='og:image'
-                content='https://seoapp1.netlify.app/img/index/Earth.svg'
+                content='https://seoapp1.netlify.app/img/index/Earth.webp'
             />
 
             <meta
@@ -105,7 +105,7 @@ export default function Home() {
             src={Earth}
             alt="Earth img"
             loading="lazy"
-            className="header-img"
+            className="header-img bg-[#A0F1BD] max-w-[429px]"
           />
         </section>
       </header>
