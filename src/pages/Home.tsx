@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet";
 import {Link} from "react-router-dom";
 import Earth from "../../public/img/index/Earth.webp";
-import One from "../../public/img/1.webp";
-import Two from "../../public/img/2.webp";
-import Three from "../../public/img/3.webp";
+import One from "../../public/img/index/1.webp";
+import Two from "../../public/img/index/2.webp";
+import Three from "../../public/img/index/3.webp";
 import Person from "../../public/img/index/Person.svg";
 import Img from "../../public/img/index/Img.svg";
 import Wood from "../../public/img/index/Wood.webp";
