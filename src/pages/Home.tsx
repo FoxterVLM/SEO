@@ -32,7 +32,7 @@ export default function Home() {
                 name="robots"
                 content="index, follow"
             />
-            <link rel="canonical" href='' />
+            <link rel="canonical" href='https://seoapp1.netlify.app/' />
             <meta
                 property='og:type'
                 content='website'
@@ -56,7 +56,7 @@ export default function Home() {
 
             <meta
                 property='og:url'
-                content=''
+                content='https://seoapp1.netlify.app/'
             />
         </Helmet>
 
