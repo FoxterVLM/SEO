@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
 import {Link} from "react-router-dom";
-import Earth from "../../public/img/index/Earth.svg";
-import One from "../../public/img/index/1.svg";
-import Two from "../../public/img/index/2.svg";
-import Three from "../../public/img/index/3.svg";
+import Earth from "../../public/img/index/EWood.webp";
+import One from "../../public/img/indWood.webp";
+import Two from "../../public/img/indWood.webp";
+import Three from "../../public/img/indWood.webp";
 import Person from "../../public/img/index/Person.svg";
 import Img from "../../public/img/index/Img.svg";
-import Wood from "../../public/img/index/Wood.svg";
+import Wood from "../../public/img/index/Wood.webp";
 import {useCanonicalStore} from "../store/canonicalStore.ts";
 import {useEffect} from "react";
 
