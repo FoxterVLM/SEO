@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /img/noindex
 Allow: /img/index
-Sitemap: https://seoapp1.netlify.app//sitemap.xml
+Sitemap: https://seoapp1.netlify.app/sitemap.xml

@@ -6,11 +6,13 @@ import Penc from "../../public/img/index/services/Penc.webp";
 import Kup from "../../public/img/index/services/Kup.webp";
 import Kube from "../../public/img/index/services/Kube.webp";
 import Taxes from "../../public/img/index/services/Taxes.webp";
+import {useCanonicalStore} from "../store/canonicalStore.ts";
 
 
 
 export default function Services() {
 
+    const {servicesPATH, bookingPATH} = useCanonicalStore();
 
     return (
         <div className='services-wrapper'>
@@ -26,8 +28,7 @@ export default function Services() {
                     name="robots"
                     content="index, follow"
                 />
-                <link rel="canonnical" href="https://example.com/services"/>
-                {/* do generatio!n! TODO */}
+                <link rel="canonnical" href={`https://seoapp1.netlify.app${servicesPATH}`}/>
                 <meta
                     property='og:type'
                     content='website'
@@ -46,34 +47,34 @@ export default function Services() {
                 />
                 <meta
                     property='og:image'
-                    content='https://example.com/img/services/Money.webp'
+                    content='https://seoapp1.netlify.app/img/services/Money.webp'
                 />
 
                 <meta
                     property='og:url'
-                    content='https://example.com/services'
+                    content={`https://seoapp1.netlify.app${servicesPATH}`}
                 />
             </Helmet>
 
             <header className="home-header">
                 <nav className="header-nav  bg-[#A0F1BD] w-full flex justify-between items-center px-[40px] py-[32px]" aria-label='Top services navigation'>
                     <Link
-                        aria-current="page"
                         className="nav-company text-[#2E4F21] font-semibold text-[27px]"
                         to="/"
                     >
                         Noble Finances
                     </Link>
-                    <div className="nav-div">
-                        <Link
+                    <div className="nav-div flex items-center">
+                        <p
+                            aria-current="page"
                             className="div-services mr-[20px] text-[#2E4F21]"
-                            to="/services"
+                            // to="/services"
                         >
                             Services
-                        </Link>
+                        </p>
                         <Link
                             className="div-booking text-white rounded-[30px] p-4 bg-[#2E4F21]"
-                            to="/booking"
+                            to={bookingPATH}
                         >
                             Book an appointment
                         </Link>
@@ -234,7 +235,7 @@ export default function Services() {
                             </h2>
 
                             <Link
-                                to="/booking"
+                                to={bookingPATH}
                                 className="inline-block bg-[#2E4F21] text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-[#243f1a] transition"
                             >
                                 Connect with our experts
@@ -277,13 +278,13 @@ export default function Services() {
                             className="flex items-center gap-6"
                         >
                             <Link
-                                to='/services'
+                                to={servicesPATH}
                                 className="text-sm opacity-80 hover:opacity-100 transition"
                             >
                                 Services
                             </Link>
 
-                            <Link to='/booking' className="bg-white text-[#2F4F1F] px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+                            <Link to={bookingPATH} className="bg-white text-[#2F4F1F] px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
                                 Book An Appointment
                             </Link>
                         </nav>

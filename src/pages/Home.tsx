@@ -8,15 +8,12 @@ import Person from "../../public/img/index/Person.svg";
 import Img from "../../public/img/index/Img.svg";
 import Wood from "../../public/img/index/Wood.webp";
 import {useCanonicalStore} from "../store/canonicalStore.ts";
-import {useEffect} from "react";
 
 
 export default function Home() {
 
-    const {servicesPATH, setServices} = useCanonicalStore();
-    useEffect(() => {
-        setServices();
-    }, [])
+    const { servicesPATH, bookingPATH} = useCanonicalStore();
+
 
   return (
     <div className="home-wrapper">
@@ -79,7 +76,7 @@ export default function Home() {
                     </Link>
                     <Link
                         className="div-booking text-white rounded-[30px] p-4 bg-[#2E4F21]"
-                        to="/booking"
+                        to={bookingPATH}
                     >
                         Book an appointment
                     </Link>
@@ -406,7 +403,7 @@ export default function Home() {
                               </p>
                           </div>
 
-                          <Link to='/services' className="mt-6 w-fit bg-white text-[#2F4F1F] px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+                          <Link to={servicesPATH} className="mt-6 w-fit bg-white text-[#2F4F1F] px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
                               Learn More
                           </Link>
                       </div>
@@ -429,7 +426,7 @@ export default function Home() {
                           stress-free. Get started with Noble Finance today!
                       </p>
 
-                      <Link to="/booking" className="bg-[#2F4F1F] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#263F19] transition">
+                      <Link to={bookingPATH} className="bg-[#2F4F1F] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[#263F19] transition">
                           Connect with our experts
                       </Link>
                   </div>
@@ -452,13 +449,13 @@ export default function Home() {
                         className="flex items-center gap-6"
                     >
                         <Link
-                            to='/services'
+                            to={servicesPATH}
                             className="text-sm opacity-80 hover:opacity-100 transition"
                         >
                             Services
                         </Link>
 
-                        <Link to='/booking' className="bg-white text-[#2F4F1F] px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+                        <Link to={bookingPATH} className="bg-white text-[#2F4F1F] px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition">
                             Book An Appointment
                         </Link>
                     </nav>

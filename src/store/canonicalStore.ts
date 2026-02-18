@@ -12,7 +12,7 @@ type Props = {
 
 export const useCanonicalStore = create<Props>((set, get) =>({
     serviceDB: 'https://seoapp1.netlify.app/services?lang=uk&category=web-development&service=seo-optimization&region=ukraine&city=kyiv&price_from=100&price_to=1000&sort=popular&page=2&ref=google&utm_source=search&utm_medium=cpc&utm_campaign=seo_promo',
-    bookingDB: '',
+    bookingDB: 'https://seoapp1.netlify.app/booking?lang=uk&category=web-development&service=seo-optimization&region=ukraine&city=kyiv&price_from=100&price_to=1000&sort=popular&page=2&ref=google&utm_source=search&utm_medium=cpc&utm_campaign=seo_promo',
     servicesPATH: '',
     bookingPATH: '',
     setServices: async () => {
@@ -34,5 +34,23 @@ export const useCanonicalStore = create<Props>((set, get) =>({
 
        set({servicesPATH: `/services${queryString ? '?' + queryString : ''}`});
     },
-    setBooking: () => {},
+    setBooking: () => {
+        const {bookingDB} = get();
+        const url = new URL(bookingDB);
+
+        const seoParams: string[] = ['category', 'sort', 'page', 'region'];
+
+        const cleanParams = new URLSearchParams();
+
+        if (seoParams) {
+            seoParams.forEach(key => {
+                if (url.searchParams.has(key)) {
+                    url.searchParams.getAll(key).forEach(v => cleanParams.append(key, v));
+                }
+            });
+        }
+        const queryString = cleanParams.toString();
+
+        set({bookingPATH: `/booking${queryString ? '?' + queryString : ''}`});
+    },
 }))

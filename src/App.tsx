@@ -4,10 +4,19 @@ import Home from "./pages/Home.tsx";
 import Booking from "./pages/Booking.tsx";
 import Services from "./pages/Services.tsx";
 import Page404 from "./pages/Page404.tsx";
+import {useCanonicalStore} from "./store/canonicalStore.ts";
+import {useEffect} from "react";
 
 function App() {
 
-  return (
+    const { setServices, setBooking} = useCanonicalStore();
+    useEffect(() => {
+        setServices();
+        setBooking();
+    }, [])
+
+
+    return (
     <Router>
       <Routes>
           <Route path='/' element={<Home />} />
