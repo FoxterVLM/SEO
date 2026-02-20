@@ -47,7 +47,7 @@ export default function Services() {
                 />
                 <meta
                     property='og:image'
-                    content='https://seoapp1.netlify.app/img/services/Money.webp'
+                    content='https://seoapp1.netlify.app/img/index/services/Money.webp'
                 />
 
                 <meta

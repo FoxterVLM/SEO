@@ -93,7 +93,7 @@ export default function Home() {
             </p>
             <Link
               className="aside-booking bg-[#2E4F21] text-white rounded-[30px] p-4"
-              to="/booking"
+              to={bookingPATH}
             >
               Connect with our experts
             </Link>
